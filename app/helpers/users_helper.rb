@@ -7,7 +7,6 @@ module UsersHelper
     is_gravatar = gravatar?(user.email)
     #gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     gravatar_url = "http://secure.gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
-    
     #gravatar_url = "http://gravatar.com/avatar/#{gravatar_id}"
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
@@ -23,5 +22,9 @@ module UsersHelper
     true  # Don't show "no gravatar" if the service is down or slow
   end
 
+  # Returns true if the given user is the current user.
+  def current_user?(user)
+    user == current_user
+  end
   
 end
