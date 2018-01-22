@@ -38,6 +38,7 @@ end
 group :production do
   gem 'pg', '0.18.4'
   gem 'fog', '1.42'
+  gem 'bootstrap-sass', '3.3.7'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
