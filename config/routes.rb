@@ -3,10 +3,16 @@ Rails.application.routes.draw do
 
   get 'password_resets/edit'
 
-  resources :users
+  #resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :relationships,       only: [:create, :destroy]
 
   root 'static_pages#home'
   get  '/help',    to: 'static_pages#help'

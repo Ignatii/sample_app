@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MicropostsControllerTest < ActionDispatch::IntegrationTest
   
- def setup
+  def setup
     @micropost = microposts(:orange)
   end
 
